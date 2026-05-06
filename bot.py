@@ -9,7 +9,7 @@ import aiosqlite
 API_TOKEN = os.getenv("8637657636:AAG7PYR6W2jWEeIrUhGggouj-u7niuWiaWg")
 
 # --- ВАЖНО: сюда вставишь ссылку Render ---
-WEBHOOK_HOST = os.getenv("WEBHOOK_HOST")  
+WEBHOOK_HOST = os.getenv("https://bot-wn0j.onrender.com")  
 WEBHOOK_PATH = f"/webhook/{API_TOKEN}"
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 
