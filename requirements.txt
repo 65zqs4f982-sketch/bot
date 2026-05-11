@@ -1,3 +1,5 @@
 aiogram==2.25.1
-aiosqlite
-flask
+aiohttp==3.8.5
+aiosqlite==0.19.0
+Flask==3.0.3
+gunicorn==22.0.0
