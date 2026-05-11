@@ -83,12 +83,31 @@ async def mailing():
         await asyncio.sleep(86400)  # 1 день
 
 # --- ЗАПУСК ---
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
+# --- ЗАПУСК ---
 async def main():
     await init_db()
     asyncio.create_task(mailing())
+
+    keep_alive()
+
     from aiogram import executor
-    executor.start_polling(dp)
+    executor.start_polling(dp, skip_updates=True)
 
 if __name__ == "__main__":
-    import asyncio
     asyncio.run(main())
