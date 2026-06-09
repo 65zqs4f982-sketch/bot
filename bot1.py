@@ -45,7 +45,7 @@ def start(message):
 
 @bot.message_handler(func=lambda m: m.text == "НЕЖНОСТЬ")
 def tenderness(message):
-    text = "🌸Вы получили файл и теперь будете получать ежедневную рассылку с идеями для улчушения себя🌸"
+    text = "🌸Вы получили файл и теперь будете получать ежедневную рассылку с советами🌸"
 
     bot.send_message(message.chat.id, text)
     bot.send_message(message.chat.id, FILE_LINK)
